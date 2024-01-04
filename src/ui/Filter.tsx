@@ -1,16 +1,20 @@
 import styled, { css } from "styled-components";
 
-const StyledFilter = styled.div`
-  border: 1px solid var(--color-grey-100);
-  background-color: var(--color-grey-0);
-  box-shadow: var(--shadow-sm);
-  border-radius: var(--border-radius-sm);
-  padding: 0.4rem;
-  display: flex;
-  gap: 0.4rem;
-`;
+// const StyledFilter = styled.div`
+//   border: 1px solid var(--color-grey-100);
+//   background-color: var(--color-grey-0);
+//   box-shadow: var(--shadow-sm);
+//   border-radius: var(--border-radius-sm);
+//   padding: 0.4rem;
+//   display: flex;
+//   gap: 0.4rem;
+// `;
 
-const FilterButton = styled.button`
+interface Props {
+  active?: string | undefined;
+}
+
+const FilterButton = styled.button<Props>`
   background-color: var(--color-grey-0);
   border: none;
 
@@ -33,3 +37,5 @@ const FilterButton = styled.button`
     color: var(--color-brand-50);
   }
 `;
+
+export default FilterButton;

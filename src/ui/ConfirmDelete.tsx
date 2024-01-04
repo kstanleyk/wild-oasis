@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Button from "./Button";
-import Heading from "./Heading";
+import Heading from "./heading.ui";
 
 const StyledConfirmDelete = styled.div`
   width: 40rem;
@@ -20,7 +20,13 @@ const StyledConfirmDelete = styled.div`
   }
 `;
 
-function ConfirmDelete({ resourceName, onConfirm, disabled }) {
+interface Props {
+  resourceName?: string;
+  onConfirm : ()=> void;
+  disabled: boolean;
+}
+
+function ConfirmDelete({ resourceName, disabled }: Props) {
   return (
     <StyledConfirmDelete>
       <Heading as="h3">Delete {resourceName}</Heading>
