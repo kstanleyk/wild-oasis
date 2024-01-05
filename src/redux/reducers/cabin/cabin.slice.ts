@@ -1,7 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Cabin, CabinState, emptyCabin } from "../../features/cabins/cabin.model";
-import cabinService from "../../services/cabin.service";
-import { UpdateMode } from "../../utils/update-mode.enum";
+import { Cabin, CabinState, emptyCabin } from "../../../features/cabins/cabin.model";
+import cabinService from "../../../services/cabin.service";
+import { UpdateMode } from "../../../utils/update-mode.enum";
 
 export const initialState: CabinState = {
     cabins: [],
