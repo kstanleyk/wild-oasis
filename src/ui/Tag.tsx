@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Tag = styled.span`
+interface Props {
+  type?: string | undefined;
+}
+
+const Tag = styled.span<Props>`
   width: fit-content;
   text-transform: uppercase;
   font-size: 1.1rem;
