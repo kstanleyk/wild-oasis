@@ -1,11 +1,15 @@
-import styled, { RuleSet, css } from "styled-components";
+import styled, { FlattenSimpleInterpolation, css } from "styled-components";
 
 interface Props {
   variation?: "primary" | "secondary" | "danger";
   size?: "small" | "medium" | "large";
 }
 
-const sizes: Record<string, RuleSet<object>> = {
+interface Sizes {
+  [key: string]: FlattenSimpleInterpolation;
+}
+
+const sizes: Sizes = {
   small: css`
     font-size: 1.2rem;
     padding: 0.4rem 0.8rem;
@@ -25,7 +29,7 @@ const sizes: Record<string, RuleSet<object>> = {
   `,
 };
 
-const variations: Record<string, RuleSet<object>> = {
+const variations: Sizes = {
   primary: css`
     color: var(--color-brand-50);
     background-color: var(--color-brand-600);

@@ -2,7 +2,7 @@ import { ResponseBase } from "../../utils/base.response"
 import { BaseState } from "../../utils/base.state"
 
 export interface Cabin {
-    Id: string
+    id: string
     name: string
     maxCapacity: number
     regularPrice: number
@@ -17,7 +17,7 @@ export interface CabinState extends BaseState {
 }
 
 export const emptyCabin : Cabin = {
-    Id: "",
+    id: "",
     name: "",
     maxCapacity: 0,
     regularPrice: 0,

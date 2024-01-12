@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Cabin } from "./cabin.model";
+
 const TableRow = styled.div`
   display: grid;
   grid-template-columns: 0.6fr 1.8fr 2.2fr 1fr 1fr 1fr;
@@ -21,7 +23,7 @@ const Img = styled.img`
   transform: scale(1.5) translateX(-7px);
 `;
 
-const Cabin = styled.div`
+const CabinCol = styled.div`
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--color-grey-600);
@@ -38,3 +40,21 @@ const Discount = styled.div`
   font-weight: 500;
   color: var(--color-green-700);
 `;
+
+interface Props {
+  cabin: Cabin;
+}
+
+export default function CabinRow({ cabin }: Props) {
+  const { name, maxCapacity, regularPrice, discount, image } = cabin;
+
+  return (
+    <TableRow role="row">
+      <Img src={image} />
+      <CabinCol>{name}</CabinCol>
+      <Price>{regularPrice}</Price>
+      <Discount>{discount}</Discount>
+      <Discount>{maxCapacity}</Discount>
+    </TableRow>
+  );
+}

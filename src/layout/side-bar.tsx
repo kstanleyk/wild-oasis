@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import Logo from "../ui/Logo";
 import MainNav from "../ui/MainNav";
 

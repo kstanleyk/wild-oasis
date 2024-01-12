@@ -1,5 +1,5 @@
 import { add } from 'date-fns';
-import { IBooking } from '../features/bookings/booking.model';
+import { Booking } from '../features/bookings/booking.model';
 
 function fromToday(numDays: number, withTime = false) {
   const date = add(new Date(), { days: numDays });
@@ -7,7 +7,7 @@ function fromToday(numDays: number, withTime = false) {
   return date.toISOString().slice(0, -1);
 }
 
-export const bookings: IBooking[] = [
+export const bookings: Booking[] = [
   // CABIN 001
   {
     createdAt: fromToday(-20, true),

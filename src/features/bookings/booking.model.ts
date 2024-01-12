@@ -1,5 +1,5 @@
 
-export interface IBooking {
+export interface Booking {
     createdAt:string
     startDate:string
     endDate: string
@@ -11,7 +11,7 @@ export interface IBooking {
     numGuests: number
 }
 
-export const emptyBooking: IBooking = {
+export const emptyBooking: Booking = {
     createdAt: "",
     startDate: "",
     endDate: "",
