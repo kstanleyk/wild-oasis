@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios'
-import { appConfig } from '../utils/constants'
+import { appConfig } from '../constants/constants'
 
 const apiHeaders = {
     baseURL: `${appConfig.apiUrl}/api`,

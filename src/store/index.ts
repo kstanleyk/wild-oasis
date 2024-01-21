@@ -1,23 +1,16 @@
-import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunkMiddleware from "redux-thunk";
+import { configureStore } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { cabinReducer } from './oasis/cabin/cabin.slice';
 
-import { persistedReducer } from "./root-reducer";
-import { logger } from "redux-logger";
 
-const initialState = {};
+export const store = configureStore({
+    reducer: {
+        cabin: cabinReducer
+    }
+})
 
-const middlewares: [any] = [thunkMiddleware];
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
-if (process.env.NODE_ENV === "development") {
-  middlewares.push(logger);
-}
-
-const middlewareEnhancer = applyMiddleware(...middlewares);
-
-const enhancers = [middlewareEnhancer];
-const composedEnhancers = composeWithDevTools(...enhancers);
-
-const store = createStore(persistedReducer, initialState, composedEnhancers);
-
-export default store;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

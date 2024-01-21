@@ -1,5 +1,5 @@
-import { apiRequests } from '.'
-import { Cabin, CabinResponse } from '../features/cabins/cabin.model'
+import { apiRequests } from ".."
+import { Cabin, CabinResponse } from "../../models/cabin/cabin.model"
 
 const route = "/cabins"
 

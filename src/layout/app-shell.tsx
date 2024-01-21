@@ -2,6 +2,9 @@ import { Outlet } from "react-router-dom";
 import Header from "./header";
 import SideBar from "./side-bar";
 import styled from "styled-components";
+import { AppDispatch, useAppDispatch } from "../store";
+import { useEffect } from "react";
+import { fetchCabinsAsync } from "../store/oasis/cabin/cabin.slice";
 
 const StyledAppShell = styled.div`
   display: grid;
@@ -16,6 +19,12 @@ const Main = styled.main`
 `;
 
 export default function AppShell() {
+  const dispatch: AppDispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCabinsAsync())
+  }, [dispatch]);
+  
   return (
     <StyledAppShell>
       <Header />

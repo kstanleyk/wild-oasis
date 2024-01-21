@@ -1,7 +1,7 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import * as cabinModel from '../../../features/cabins/cabin.model'
-import { UpdateMode } from '../../../utils/update-mode.enum'
-import cabinService from '../../../services/cabin.service'
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import * as cabinModel from '../../../models/cabin/cabin.model'
+import { UpdateMode } from "../../../models/update-mode/update-mode.enum"
+import cabinService from "../../../services/cabin/cabin.service"
 
 export const initialState: cabinModel.CabinState = {
     cabins: [],
@@ -17,8 +17,8 @@ export const fetchCabinsAsync = createAsyncThunk<cabinModel.Cabin[], void>(
     async (_, thunkApi) => {
         try {
             return await cabinService.list()
-        } catch (error: any) {
-            return thunkApi.rejectWithValue({ error: error.data })
+        } catch (error) {
+            return thunkApi.rejectWithValue({ error: "an error occured" })
         }
     }
 )
