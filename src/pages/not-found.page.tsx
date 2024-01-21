@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { useMoveBack } from "../hooks/move-back.hook";
-import Button from "../ui/Button";
+import Button from "../ui/button,ui";
 import Heading from "../ui/heading.ui";
 
 const StyledPageNotFound = styled.main`

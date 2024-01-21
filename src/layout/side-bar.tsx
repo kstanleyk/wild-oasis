@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Logo from "../ui/Logo";
+import Logo from "../ui/logo.ui";
 import MainNav from "../ui/MainNav";
 
 const StyledSidebar = styled.aside`

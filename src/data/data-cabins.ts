@@ -1,6 +1,7 @@
 import { Cabin } from "../features/cabins/cabin.model";
 
-const imageUrl = `storage/v1/object/public/cabin-images/`;
+//const imageUrl = `storage/v1/object/public/cabin-images/`;
+const imageUrl = `/`;
 
 export const cabins : Cabin[] = [
   {
